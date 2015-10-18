@@ -921,12 +921,14 @@ h3 {
   font-size: 1.25rem;
   color: #355BD6; }
 
-.button {
+.button, .big-button {
   cursor: pointer;
+  text-align: center; }
+
+.button {
   width: 120px;
   height: 40px;
   padding: 4px 6px;
-  text-align: center;
   font-size: 18px;
   font-size: 1.125rem;
   font-family: Futura;
@@ -936,6 +938,22 @@ h3 {
     background-color: #E2690E;
     border-color: #E2690E;
     color: white; }
+
+.big-button {
+  cursor: pointer;
+  box-shadow: 0px 5px 10px 0 #999;
+  width: 180px;
+  height: 60px;
+  padding: 9px 6px;
+  text-align: center;
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-family: Futura;
+  color: white;
+  background-color: #355BD6; }
+  .big-button:hover {
+    background-color: #E2690E;
+    box-shadow: 0px 5px 20px 0 #999; }
 
 .feature-box {
   width: 100%;
@@ -997,6 +1015,7 @@ h3 {
   width: 100%;
   top: 0;
   left: 0;
+  box-shadow: 0 0px 15px 0 #333;
   z-index: 2;
   background-color: rgba(165, 185, 255, 0.9); }
   .header__logo, .header__title, .header__nav, .header ul {
@@ -1055,7 +1074,7 @@ h3 {
 
 .footer {
   padding: 40px 20px;
-  border-top: 1px solid rgba(53, 91, 214, 0.33);
+  box-shadow: 0 0px 15px 0 #333;
   background-color: rgba(53, 91, 214, 0.13); }
   .footer__logo, .footer__title {
     vertical-align: top;
@@ -1087,41 +1106,86 @@ h3 {
   background-image: url("../images/Green-Grass-26-1200.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 0 108%; }
+  background-position: 0 108%;
+  box-shadow: 0 0px 15px 0 #333; }
   .hero__content {
-    position: absolute;
-    top: 25%;
-    left: 18%; }
-    .hero__content > * {
-      display: inline-block; }
-  .hero__logo img {
-    height: 150px;
-    position: relative;
-    top: -7px;
-    -webkit-animation: bounce 2.5s ease-in-out infinite;
-    -moz-animation: bounce 2.5s ease-in-out infinite;
-    -ms-animation: bounce 2.5s ease-in-out infinite;
-    -o-animation: bounce 2.5s ease-in-out infinite;
-    animation: bounce 2.5s ease-in-out infinite; }
+    position: static; }
+    @media only screen and (min-width: 700px) {
+      .hero__content {
+        position: absolute;
+        top: 20%;
+        left: 15%; } }
+  .hero__logo, .hero__text {
+    display: block; }
+    @media only screen and (min-width: 700px) {
+      .hero__logo, .hero__text {
+        display: inline-block;
+        vertical-align: top; } }
+  .hero__logo {
+    text-align: center; }
+    @media only screen and (min-width: 700px) {
+      .hero__logo {
+        text-align: left; } }
+    .hero__logo img {
+      display: inline-block;
+      margin: 30px auto;
+      height: 80px;
+      left: 15px;
+      position: relative;
+      -webkit-animation: bounce 2.5s ease-in-out infinite;
+      -moz-animation: bounce 2.5s ease-in-out infinite;
+      -ms-animation: bounce 2.5s ease-in-out infinite;
+      -o-animation: bounce 2.5s ease-in-out infinite;
+      animation: bounce 2.5s ease-in-out infinite; }
+      @media only screen and (min-width: 700px) {
+        .hero__logo img {
+          height: 150px;
+          margin: auto;
+          top: +45px;
+          left: 0; } }
   .hero__text {
-    margin: 0 0 0 45px; }
+    margin: 0 0 0 45px;
+    text-align: center; }
+    @media only screen and (min-width: 700px) {
+      .hero__text {
+        text-align: left; } }
+    .hero__text h1, .hero__text p {
+      text-align: center; }
+      @media only screen and (min-width: 700px) {
+        .hero__text h1, .hero__text p {
+          text-align: left; } }
     .hero__text h1 {
       margin: 0;
       opacity: 0.87;
-      font-size: 84px;
-      font-size: 5.25rem; }
+      font-size: 36px;
+      font-size: 2.25rem; }
+      @media only screen and (min-width: 700px) {
+        .hero__text h1 {
+          font-size: 84px;
+          font-size: 5.25rem; } }
     .hero__text p {
       font-family: Futura;
-      margin: 0 0;
+      margin: 0;
       opacity: 0.77;
       padding-left: 4px;
       line-height: 125%;
-      font-size: 28px;
-      font-size: 1.75rem; }
+      font-size: 22px;
+      font-size: 1.375rem; }
+      @media only screen and (min-width: 700px) {
+        .hero__text p {
+          font-size: 28px;
+          font-size: 1.75rem; } }
+  .hero .button {
+    display: block;
+    margin: 15px auto; }
+    @media only screen and (min-width: 700px) {
+      .hero .button {
+        display: inline-block;
+        margin: 25px 0 0 5px; } }
 
 .pitch {
   width: 100%;
-  background-color: rgba(222, 201, 171, 0.1);
+  background-color: rgba(53, 91, 214, 0.13);
   padding: 120px 20px; }
   .pitch__content {
     max-width: 1000px;
@@ -1176,7 +1240,7 @@ h3 {
   .chat-bar__body {
     margin: 0 0 30px 0; }
   .chat-bar:nth-of-type(2n+0) {
-    background-color: rgba(222, 201, 171, 0.1); }
+    background-color: rgba(53, 91, 214, 0.13); }
 
 .info {
   width: 100%;
@@ -1189,5 +1253,5 @@ h3 {
     margin-bottom: 25px; }
   .info__button {
     width: 100%; }
-    .info__button .button {
-      margin: calc(37.5% - 20px) auto auto auto; }
+    .info__button .big-button {
+      margin: calc(37.5% - 30px) auto auto auto; }

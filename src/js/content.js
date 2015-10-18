@@ -46,6 +46,11 @@
 					imageFileName: "putting-on-shoes-600.jpg"
 				}
 			]
+		},
+
+		{
+			title: "We put a lot of care into this.",
+			body: "A happy team of nutritionists, farmers, data scientists, designers and programmers stand behind your experience at LiquidLab. Discover how:"
 		}
 
 	];

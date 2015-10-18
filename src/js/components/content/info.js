@@ -23,7 +23,7 @@
 							<div className='grid__col grid__col--6-of-12'>
 
 								<div className='info__button'>
-									<div className='button'>Our story</div>
+									<div className='big-button'>Our story</div>
 								</div>
 
 							</div>

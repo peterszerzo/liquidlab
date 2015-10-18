@@ -7,7 +7,8 @@ $palette: (
 		extra-faint: transparentize(#55CE0F, 0.95)
 	),
 	purple: (
-		light: transparentize(#A5B9FF, 0.1),
+		light-slight-faint: transparentize(#A5B9FF, 0.1),
+		light: #A5B9FF,
 		base: #355BD6,
 		faint: transparentize(#355BD6, 0.67),
 		extra-faint: transparentize(#355BD6, 0.87)

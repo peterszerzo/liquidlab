@@ -17,6 +17,7 @@
 							<h1>LiquidLab</h1>
 							<p>Better nutrition. Better life.</p>
 							<p>Tailored to you.</p>
+							<div className='button'>Get started</div>
 						</div>
 					</div>
 				</div>

@@ -28,6 +28,7 @@
 					<Pitch />
 					<ChatBar {...ll.content.chatBoxes[0]} position='left' />
 					<ChatBar {...ll.content.chatBoxes[1]} position='right' />
+					<ChatBar {...ll.content.chatBoxes[2]} position='left' />
 					<Info />
 					<Footer />
 				</div>

@@ -6,9 +6,11 @@
 	top: 0;
 	left: 0;
 
+	box-shadow: 0 0px 15px 0 #333;
+
 	z-index: 2;
 
-	background-color: palette-get(purple, light);
+	background-color: palette-get(purple, light-slight-faint);
 
 	&__logo, &__title, &__nav, ul {
 		display: inline-block;

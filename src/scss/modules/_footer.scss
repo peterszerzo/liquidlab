@@ -2,7 +2,9 @@
 
 	padding: 40px 20px;
 
-	border-top: 1px solid palette-get(purple, faint);
+	// border-top: 1px solid palette-get(purple, faint);
+
+	box-shadow: 0 0px 15px 0 #333;
 
 	background-color: palette-get(purple, extra-faint);
 

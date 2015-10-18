@@ -52,6 +52,9 @@ ll.start = function () {
 			body: "Our version of ‘Eat dessert first’, The Sweet Tooth sampler includes three of our healthy, delicious fruit smoothie blends: Mixed Berry, Strawberry-Banana and Blueberry Cobblerr.",
 			imageFileName: "putting-on-shoes-600.jpg"
 		}]
+	}, {
+		title: "We put a lot of care into this.",
+		body: "A happy team of nutritionists, farmers, data scientists, designers and programmers stand behind your experience at LiquidLab. Discover how:"
 	}];
 
 	ll.content.info = {
@@ -404,6 +407,11 @@ ll.Comp = ll.Comp || {};
 								"p",
 								null,
 								"Tailored to you."
+							),
+							React.createElement(
+								"div",
+								{ className: "button" },
+								"Get started"
 							)
 						)
 					)
@@ -455,7 +463,7 @@ ll.Comp = ll.Comp || {};
 									{ className: "info__button" },
 									React.createElement(
 										"div",
-										{ className: "button" },
+										{ className: "big-button" },
 										"Our story"
 									)
 								)
@@ -641,6 +649,7 @@ ll.Comp = ll.Comp || {};
 					React.createElement(Pitch, null),
 					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[0], { position: "left" })),
 					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[1], { position: "right" })),
+					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[2], { position: "left" })),
 					React.createElement(Info, null),
 					React.createElement(Footer, null)
 				);
