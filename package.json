@@ -11,7 +11,14 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
+    "gulp-concat": "^2.6.0",
     "gulp-minify-css": "^1.2.1",
+    "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4"
+  },
+  "dependencies": {
+    "babel": "^5.8.23",
+    "classnames": "^2.2.0",
+    "react-dom": "^0.14.0"
   }
 }

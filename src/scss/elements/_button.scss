@@ -1,0 +1,27 @@
+.button {
+
+	cursor: pointer;
+
+	width: 120px;
+	height: 40px;
+	$ppl: palette-get(purple);
+	$org: palette-get(orange);
+
+	padding: 4px 6px;
+
+	text-align: center;
+
+	@include font-size(18px);
+
+	font-family: Futura;
+
+	color: $ppl;
+	border: 2px solid $ppl;
+
+	&:hover {
+		background-color: $org;
+		border-color: $org;
+		color: white;
+	}
+
+}

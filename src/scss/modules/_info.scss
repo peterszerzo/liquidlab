@@ -1,0 +1,23 @@
+.info {
+
+	width: 100%;
+	padding: 120px 20px;
+
+	&__content {
+		max-width: $max-width;
+		display: block;
+		margin: auto;
+	}
+
+	.grid:first-child {
+		margin-bottom: $gutter-width;
+	}
+
+	&__button {
+		width: 100%;
+		.button {
+			margin: calc(37.5% - 20px) auto auto auto;
+		}
+	}
+
+}

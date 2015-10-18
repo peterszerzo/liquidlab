@@ -1,0 +1,52 @@
+.hero {
+
+	position: relative;
+
+	height: 100%;
+
+	background-image: url('../images/Green-Grass-26-1200.png');
+
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: 0 108%;
+
+
+	&__content {
+		position: absolute;
+		top: 25%;
+		left: 18%;
+
+		& > * {
+			display: inline-block;
+		}
+	}
+
+	&__logo {
+		img {
+			height: 150px;
+			position: relative;
+			top: -7px;
+			@include animation(bounce 2.5s ease-in-out infinite);
+		}
+	}
+
+	&__text {
+		margin: 0 0 0 45px;
+		h1 {
+			margin: 0;
+			opacity: 0.87;
+			@include font-size(84px);
+		}
+
+		p {
+			font-family: Futura;
+			margin: 0 0;
+			// color: palette-get(purple);
+			opacity: 0.77;
+			padding-left: 4px;
+			line-height: 125%;
+			@include font-size(28px);
+		}
+	}
+
+}

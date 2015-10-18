@@ -1,0 +1,26 @@
+$palette: (
+	green: (
+		base: #55CE0F,
+		dark: #23B325,
+		extra-dark: #1B7D24,
+		faint: transparentize(#55CE0F, 0.7),
+		extra-faint: transparentize(#55CE0F, 0.95)
+	),
+	purple: (
+		light: transparentize(#A5B9FF, 0.1),
+		base: #355BD6,
+		faint: transparentize(#355BD6, 0.67),
+		extra-faint: transparentize(#355BD6, 0.87)
+	),
+	orange: (
+		base: #E2690E,
+		faint: transparentize(#E2690E, 0.96)
+	),
+	brown: (
+		extra-light: transparentize(#DEC9AB, 0.9)
+	)
+);
+
+@function palette-get($key, $type: 'base') {
+	@return map-get(map-get($palette, $key), $type);
+}
