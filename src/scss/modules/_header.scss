@@ -35,6 +35,20 @@
 	}
 
 	&__nav {
+
+		&__falafel {
+			width: 25px;
+			height: 20px;
+			position: absolute;
+			top: 20px;
+			right: 18px;
+			display: block;
+			@include bp-w-md {
+				display: none;
+			}
+			
+		}
+
 		p {
 			color: white;
 			font-family: Futura;
@@ -42,6 +56,10 @@
 	}
 
 	ul {
+		display: none;
+		@include bp-w-md {
+			display: block;
+		}
 		position: absolute;
 		right: 0;
 		top: 0;

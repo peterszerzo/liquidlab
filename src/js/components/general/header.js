@@ -14,6 +14,9 @@
 					</div>
 					<div className='header__title'>LiquidLab</div>
 					<nav className='header__nav'>
+						<div className='header__nav__falafel'>
+							<img src='public/images/falafel.svg' />
+						</div>
 						<ul>
 							{ this.renderNavItems() }
 						</ul>
