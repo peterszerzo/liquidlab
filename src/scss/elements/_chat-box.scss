@@ -1,0 +1,15 @@
+.chat-box {
+	@include font-size(24px);
+	padding: 6px 18px;
+	border-radius: 22px;
+
+	@include bp-w-md() {
+		padding: 8px 22px;
+	border-radius: 28px;
+		@include font-size(30px);
+	}
+	
+	
+	background-color: palette-get(green, base);
+	color: white;
+}

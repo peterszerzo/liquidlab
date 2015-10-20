@@ -12,6 +12,9 @@
 
 					<div className='info__content'>
 
+						<h1 className='chat-box'>Discover how:</h1>
+
+
 						<div className='grid'>
 
 							<div className='grid__col grid__col--6-of-12'>

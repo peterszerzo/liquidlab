@@ -12,7 +12,10 @@
 
 	margin: auto;
 
-	padding: 120px 20px;
+	padding: 80px 20px;
+	@include bp-w-md {
+		padding: 120px 20px;
+	}
 
 	opacity: 1;
 
@@ -28,19 +31,21 @@
 
 	&__title {
 		margin: 0 0 30px 0;
-		@include font-size(30px);
-		padding: 8px 18px;
-		border-radius: 16px;
-		background-color: palette-get(green, base);
-		color: white;
 	}
 
 	&__body {
 		margin: 0 0 30px 0 ;
 	}
 
+	.feature-box {
+		margin-bottom: $gutter-width;
+		@include bp-w-md {
+			margin-bottom: 0;
+		}
+	}
+
 	&:nth-of-type(2n+0) {
-		background-color: palette-get(purple, extra-faint);
+		background-color: palette-get(grey, extra-light);
 	}
 
 }

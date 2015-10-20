@@ -8,9 +8,13 @@
 
 	background-repeat: no-repeat;
 	background-size: 100%;
-	background-position: 0 108%;
+	background-position: 0 100%;
 
-	box-shadow: 0 0px 15px 0 #333;
+	@include bp-w-md {
+		background-position: 0 108%;
+	}
+
+	// box-shadow: 0 0px 15px 0 #333;
 
 
 	&__content {
@@ -19,7 +23,7 @@
 		@include bp-w-md {
 			position: absolute;
 			top: 20%;
-			left: 15%;
+			left: 18%;
 		}
 
 	}
@@ -44,10 +48,9 @@
 		img {
 
 			display: inline-block;
-			margin: 30px auto;
-			height: 80px;
+			margin: 100px auto 50px auto;
+			height: 100px;
 
-			left: 15px;
 
 			position: relative;
 
@@ -65,7 +68,11 @@
 	}
 
 	&__text {
-		margin: 0 0 0 45px;
+
+		margin: 0;
+		@include bp-w-md {
+			margin: 0 0 0 45px;
+		}
 
 		text-align: center;
 		@include bp-w-md {
@@ -90,12 +97,18 @@
 
 		p {
 			font-family: Futura;
-			margin: 0;
+
+			margin: 3px;
+
+			&:first-of-type { margin-top: 15px; }
+			&:last-of-type { margin-bottom: 15px; }
+
 			opacity: 0.77;
 			padding-left: 4px;
 			line-height: 125%;
 			@include font-size(22px);
 			@include bp-w-md {
+				margin: 0;
 				@include font-size(28px);
 			}
 		}
@@ -103,7 +116,7 @@
 
 	.button {
 		display: block;
-		margin: 15px auto;
+		margin: 35px auto;
 		@include bp-w-md {
 			display: inline-block;
 			margin: 25px 0 0 5px;

@@ -1,7 +1,7 @@
 .info {
 
 	width: 100%;
-	padding: 120px 20px;
+	padding: 0px 20px 120px 20px;
 
 	&__content {
 		max-width: $max-width;
@@ -9,14 +9,27 @@
 		margin: auto;
 	}
 
-	.grid:first-child {
+	.grid:first-of-type {
 		margin-bottom: $gutter-width;
 	}
 
 	&__button {
 		width: 100%;
 		.big-button {
-			margin: calc(37.5% - 30px) auto auto auto;
+			margin: 120px auto;
+			@include bp-w-md {
+				margin: calc(37.5% - 30px) auto auto auto;
+			}
+		}
+	}
+
+	.chat-box {
+		width: 300px;
+		display: block;
+		text-align: center;
+		margin: auto auto 50px auto;
+		@include bp-w-md() {
+			margin: auto auto 70px auto;
 		}
 	}
 

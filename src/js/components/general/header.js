@@ -10,7 +10,7 @@
 			return (
 				<header className='header'>
 					<div className='header__logo'>
-						<img src="public/images/logo-black.svg" />
+						<img src="public/images/logo-white.svg" />
 					</div>
 					<div className='header__title'>LiquidLab</div>
 					<nav className='header__nav'>

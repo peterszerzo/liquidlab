@@ -24,7 +24,6 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		
 	}
 
 	&__background {
@@ -45,7 +44,7 @@
 	}
 
 	&__title h1, &__body p {
-		padding: 20px;
+		padding: 15px 20px;
 	}
 
 	&__title {
@@ -56,7 +55,7 @@
 			color: white;
 			line-height: 120%;
 			text-align: center;
-			@include font-size(36px);
+			@include font-size(32px);
 		}
 
 		opacity: 1;
@@ -80,7 +79,7 @@
 			height: 100%;
 			overflow: hidden;
 			color: white;
-			@include font-size(22px);
+			@include font-size(18px);
 		}
 
 	}

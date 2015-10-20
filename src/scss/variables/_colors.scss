@@ -8,7 +8,8 @@ $palette: (
 	),
 	purple: (
 		light-slight-faint: transparentize(#A5B9FF, 0.1),
-		light: #A5B9FF,
+		slight-faint: transparentize(#355BD6, 0.22),
+		light: darken(#A5B9FF, 10),
 		base: #355BD6,
 		faint: transparentize(#355BD6, 0.67),
 		extra-faint: transparentize(#355BD6, 0.87)
@@ -19,6 +20,10 @@ $palette: (
 	),
 	brown: (
 		extra-light: transparentize(#DEC9AB, 0.9)
+	),
+	grey: (
+		light: #ddd,
+		extra-light: #f4f4f4
 	)
 );
 

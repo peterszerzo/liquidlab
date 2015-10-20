@@ -22,7 +22,7 @@
 						<div className='grid'>
 							{ this.props.position === 'right' ? <div className='grid__col grid__col--3-of-12'></div> : null }
 							<div className='grid__col grid__col--9-of-12'>						
-								<h1 className='chat-bar__title'>{ this.props.title }</h1>
+								<h1 className='chat-box chat-bar__title'>{ this.props.title }</h1>
 								<p className='chat-bar__body'>{ this.props.body }</p>
 								<div className='grid'>
 									{ this.renderBoxes() }

@@ -33,11 +33,11 @@
 
 	cursor: pointer;
 
-	box-shadow: 0px 5px 10px 0 #999;
+	//box-shadow: 0px 5px 10px 0 #999;
 
 	width: 180px;
 	height: 60px;
-	$ppl: palette-get(purple, light);
+	$ppl: palette-get(purple);
 	$org: palette-get(orange);
 
 	padding: 9px 6px;
@@ -54,7 +54,7 @@
 
 	&:hover {
 		background-color: $org;
-		box-shadow: 0px 5px 20px 0 #999;
+		//box-shadow: 0px 5px 20px 0 #999;
 	}
 
 }

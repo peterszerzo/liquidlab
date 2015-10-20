@@ -19,11 +19,17 @@ li {
 
 p {
 	font-family: Georgia;
-	@include font-size(18px);
+	@include font-size(16px);
+	@include bp-w-md {
+		@include font-size(18px);
+	}	
 }
 
 h3 {
 	font-family: Futura;
-	@include font-size(20px);
+	@include font-size(18px);
+	@include bp-w-md {
+		@include font-size(20px);
+	}	
 	color: palette-get(purple);
 }

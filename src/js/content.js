@@ -37,20 +37,20 @@
 				},
 				{
 					title: "Let's nerd it out together",
-					body: "Looking to soothe your stomach, heal your muscles or fire up your brain? 'Happy to help', says our insane nutritional database.",
+					body: "Our databases know exactly what your body needs based on your metabolism, lifestyle and mood. And they are really smooth in conversation.",
 					imageFileName: "laptop-600.jpg"
 				},
 				{
 					title: "Polish it up with some more you",
-					body: "Our version of ‘Eat dessert first’, The Sweet Tooth sampler includes three of our healthy, delicious fruit smoothie blends: Mixed Berry, Strawberry-Banana and Blueberry Cobblerr.",
+					body: "Customize further based on your daily routine, budget and much more. Let us do the planning for you.",
 					imageFileName: "putting-on-shoes-600.jpg"
 				}
 			]
 		},
 
 		{
-			title: "We put a lot of care into this.",
-			body: "A happy team of nutritionists, farmers, data scientists, designers and programmers stand behind your experience at LiquidLab. Discover how:"
+			title: "We do put a lot of care into this.",
+			body: "A happy team of nutritionists, farmers, data scientists, designers and programmers stand behind your experience at LiquidLab."
 		}
 
 	];
