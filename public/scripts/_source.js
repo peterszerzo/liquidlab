@@ -200,6 +200,11 @@ ll.Comp = ll.Comp || {};
 						"nav",
 						{ className: "header__nav" },
 						React.createElement(
+							"div",
+							{ className: "header__nav__falafel" },
+							React.createElement("img", { src: "public/images/falafel.svg" })
+						),
+						React.createElement(
 							"ul",
 							null,
 							this.renderNavItems()

@@ -1,1 +1,0 @@
-ll.Comp = ll.Comp || {};
