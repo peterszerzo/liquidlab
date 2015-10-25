@@ -14,7 +14,7 @@ var ll = {};
 
 ll.start = function () {
 	var Cmp = ll.Comp.Layout;
-	console.log(React.renderToString(React.createElement(Cmp, null)));
+	// console.log(React.renderToString(<Cmp />));
 	React.render(React.createElement(Cmp, null), document.getElementById('site'));
 };
 (function () {
@@ -246,13 +246,106 @@ ll.Comp = ll.Comp || {};
 })();
 (function () {
 
-	ll.Comp.ChatBar = (function (_React$Component3) {
+	ll.Comp.About = (function (_React$Component3) {
 		_inherits(_class3, _React$Component3);
 
-		function _class3(props) {
+		function _class3() {
 			_classCallCheck(this, _class3);
 
-			_get(Object.getPrototypeOf(_class3.prototype), "constructor", this).call(this, props);
+			_get(Object.getPrototypeOf(_class3.prototype), "constructor", this).apply(this, arguments);
+		}
+
+		_createClass(_class3, [{
+			key: "render",
+
+			/*
+    *
+    *
+    */
+			value: function render() {
+				return React.createElement(
+					"div",
+					{ className: "about" },
+					React.createElement(
+						"div",
+						{ className: "about__content" },
+						React.createElement(
+							"div",
+							{ className: "chat-box" },
+							React.createElement(
+								"h1",
+								null,
+								"We have a simple story"
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "grid" },
+							React.createElement("div", { className: "grid__col grid__col--6-of-12" }),
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"p",
+									null,
+									"Jeff woke up one morning."
+								)
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "grid" },
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"p",
+									null,
+									"Aby liked the idea and had many things to add."
+								)
+							),
+							React.createElement("div", { className: "grid__col grid__col--6-of-12" })
+						),
+						React.createElement(
+							"div",
+							{ className: "grid" },
+							React.createElement("div", { className: "grid__col grid__col--6-of-12" }),
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"p",
+									null,
+									"Luckily for us, Gabriel was easily convinced. He is really good with business development."
+								)
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "chat-box" },
+							React.createElement(
+								"h1",
+								null,
+								"Real, real simple."
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return _class3;
+	})(React.Component);
+})();
+(function () {
+
+	ll.Comp.ChatBar = (function (_React$Component4) {
+		_inherits(_class4, _React$Component4);
+
+		function _class4(props) {
+			_classCallCheck(this, _class4);
+
+			_get(Object.getPrototypeOf(_class4.prototype), "constructor", this).call(this, props);
 			this.state = {
 				isActive: true
 			};
@@ -263,7 +356,7 @@ ll.Comp = ll.Comp || {};
    *
    */
 
-		_createClass(_class3, [{
+		_createClass(_class4, [{
 			key: "render",
 			value: function render() {
 				var cls = "chat-bar " + (this.state.isActive ? '' : 'chat-bar--inactive') + " chat-bar--" + this.props.position;
@@ -367,21 +460,21 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class3;
+		return _class4;
 	})(React.Component);
 })();
 (function () {
 
-	ll.Comp.Hero = (function (_React$Component4) {
-		_inherits(_class4, _React$Component4);
+	ll.Comp.Hero = (function (_React$Component5) {
+		_inherits(_class5, _React$Component5);
 
-		function _class4() {
-			_classCallCheck(this, _class4);
+		function _class5() {
+			_classCallCheck(this, _class5);
 
-			_get(Object.getPrototypeOf(_class4.prototype), "constructor", this).apply(this, arguments);
+			_get(Object.getPrototypeOf(_class5.prototype), "constructor", this).apply(this, arguments);
 		}
 
-		_createClass(_class4, [{
+		_createClass(_class5, [{
 			key: "render",
 
 			/*
@@ -429,21 +522,21 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class4;
+		return _class5;
 	})(React.Component);
 })();
 (function () {
 
-	ll.Comp.Info = (function (_React$Component5) {
-		_inherits(_class5, _React$Component5);
+	ll.Comp.Info = (function (_React$Component6) {
+		_inherits(_class6, _React$Component6);
 
-		function _class5() {
-			_classCallCheck(this, _class5);
+		function _class6() {
+			_classCallCheck(this, _class6);
 
-			_get(Object.getPrototypeOf(_class5.prototype), "constructor", this).apply(this, arguments);
+			_get(Object.getPrototypeOf(_class6.prototype), "constructor", this).apply(this, arguments);
 		}
 
-		_createClass(_class5, [{
+		_createClass(_class6, [{
 			key: "render",
 
 			/*
@@ -463,7 +556,7 @@ ll.Comp = ll.Comp || {};
 							React.createElement(
 								"h1",
 								null,
-								"Discover how:"
+								"Here is how:"
 							)
 						),
 						React.createElement(
@@ -482,7 +575,7 @@ ll.Comp = ll.Comp || {};
 									{ className: "info__button" },
 									React.createElement(
 										"div",
-										{ className: "big-button" },
+										{ className: "big-button", onClick: this.props.navigateToAboutPage },
 										"Our story"
 									)
 								)
@@ -551,21 +644,21 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class5;
+		return _class6;
 	})(React.Component);
 })();
 (function () {
 
-	ll.Comp.Pitch = (function (_React$Component6) {
-		_inherits(_class6, _React$Component6);
+	ll.Comp.Pitch = (function (_React$Component7) {
+		_inherits(_class7, _React$Component7);
 
-		function _class6() {
-			_classCallCheck(this, _class6);
+		function _class7() {
+			_classCallCheck(this, _class7);
 
-			_get(Object.getPrototypeOf(_class6.prototype), "constructor", this).apply(this, arguments);
+			_get(Object.getPrototypeOf(_class7.prototype), "constructor", this).apply(this, arguments);
 		}
 
-		_createClass(_class6, [{
+		_createClass(_class7, [{
 			key: "render",
 
 			/*
@@ -626,7 +719,7 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class6;
+		return _class7;
 	})(React.Component);
 })();
 (function () {
@@ -637,20 +730,22 @@ ll.Comp = ll.Comp || {};
 	var Pitch = _ll$Comp.Pitch;
 	var ChatBar = _ll$Comp.ChatBar;
 	var Info = _ll$Comp.Info;
+	var About = _ll$Comp.About;
 
-	ll.Comp.Layout = (function (_React$Component7) {
-		_inherits(_class7, _React$Component7);
+	ll.Comp.Layout = (function (_React$Component8) {
+		_inherits(_class8, _React$Component8);
 
 		/*
    *
    *
    */
 
-		function _class7(props) {
-			_classCallCheck(this, _class7);
+		function _class8(props) {
+			_classCallCheck(this, _class8);
 
-			_get(Object.getPrototypeOf(_class7.prototype), "constructor", this).call(this, props);
+			_get(Object.getPrototypeOf(_class8.prototype), "constructor", this).call(this, props);
 			this.state = {
+				route: 'home',
 				scrollTop: null
 			};
 		}
@@ -660,21 +755,83 @@ ll.Comp = ll.Comp || {};
    *
    */
 
-		_createClass(_class7, [{
+		_createClass(_class8, [{
 			key: "render",
 			value: function render() {
 				return React.createElement(
 					"div",
 					{ className: "wrapper", onScroll: this.handleScroll.bind(this) },
 					this.state.scrollTop > 500 ? React.createElement(Header, null) : null,
-					React.createElement(Hero, null),
-					React.createElement(Pitch, null),
-					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[0], { position: "left" })),
-					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[1], { position: "right" })),
-					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[2], { position: "left" })),
-					React.createElement(Info, null),
-					React.createElement(Footer, null)
+					this.renderRoutable()
 				);
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "renderRoutable",
+			value: function renderRoutable() {
+				if (this.state.route === 'home') {
+					return React.createElement(
+						"div",
+						null,
+						React.createElement(Hero, null),
+						React.createElement(Pitch, null),
+						React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[0], { position: "left" })),
+						React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[1], { position: "right" })),
+						React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[2], { position: "left" })),
+						React.createElement(Info, { navigateToAboutPage: this.navigateToAboutPage.bind(this) }),
+						React.createElement(Footer, null)
+					);
+				}
+
+				return React.createElement(
+					"div",
+					null,
+					React.createElement(About, null)
+				);
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				this.setHash();
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "componentDidUpdate",
+			value: function componentDidUpdate() {
+				this.setHash();
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "setHash",
+			value: function setHash() {
+				window.location.hash = this.state.route;
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "navigateToAboutPage",
+			value: function navigateToAboutPage() {
+				this.setState({ route: 'about' });
 			}
 
 			/*
@@ -689,6 +846,6 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class7;
+		return _class8;
 	})(React.Component);
 })();

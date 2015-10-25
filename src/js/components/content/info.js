@@ -13,7 +13,7 @@
 					<div className='info__content'>
 
 						<div className='chat-box'>
-							<h1>Discover how:</h1>
+							<h1>Here is how:</h1>
 						</div>
 
 
@@ -28,7 +28,7 @@
 							<div className='grid__col grid__col--6-of-12'>
 
 								<div className='info__button'>
-									<div className='big-button'>Our story</div>
+									<div className='big-button' onClick={this.props.navigateToAboutPage}>Our story</div>
 								</div>
 
 							</div>

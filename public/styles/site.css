@@ -949,6 +949,7 @@ h3 {
 
 .big-button {
   cursor: pointer;
+  box-shadow: 0 3px 10px 0 #777;
   width: 180px;
   height: 60px;
   padding: 9px 6px;
@@ -958,6 +959,8 @@ h3 {
   font-family: Futura;
   color: white;
   background-color: #355BD6; }
+  .big-button:hover {
+    box-shadow: 0 3px 15px 0 #777; }
   .big-button:hover {
     background-color: #E2690E; }
 
@@ -991,7 +994,7 @@ h3 {
   .feature-box__title h1, .feature-box__body p {
     padding: 15px 20px; }
   .feature-box__title {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.25);
     z-index: 1;
     opacity: 1; }
     .feature-box__title h1 {
@@ -1338,3 +1341,10 @@ h3 {
     @media only screen and (min-width: 700px) {
       .info .chat-box {
         margin: auto auto 20px auto; } }
+
+.about {
+  padding: 80px 0; }
+  .about__content {
+    max-width: 1000px;
+    display: block;
+    margin: auto; }
