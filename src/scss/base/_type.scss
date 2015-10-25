@@ -18,18 +18,18 @@ li {
 }
 
 p {
-	font-family: Georgia;
-	@include font-size(16px);
+	font-family: Garamond;
+	@include font-size(18px);
 	@include bp-w-md {
-		@include font-size(18px);
-	}	
+		@include font-size(20px);
+	}
 }
 
 h3 {
 	font-family: Futura;
-	@include font-size(18px);
+	@include font-size(20px);
 	@include bp-w-md {
-		@include font-size(20px);
+		@include font-size(24px);
 	}	
 	color: palette-get(purple);
 }

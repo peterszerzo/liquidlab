@@ -12,7 +12,9 @@
 
 					<div className='info__content'>
 
-						<h1 className='chat-box'>Discover how:</h1>
+						<div className='chat-box'>
+							<h1>Discover how:</h1>
+						</div>
 
 
 						<div className='grid'>
@@ -56,10 +58,13 @@
 		 *
 		 *
 		 */
-		renderFeatureBox(data) {
+		renderFeatureBox(data, modifier) {
+
+			var baseCls = 'feature-box feature-box--4-to-3',
+				cls = modifier ? `${baseCls} feature-box--${modifier}` : baseCls;
 
 			return (
-				<div className='feature-box feature-box--4-to-3'>
+				<div className={ baseCls }>
 					<div className='feature-box__background' style={ { 'backgroundImage': `url(public/images/${data.imageFileName})` }}></div>
 					<div className='feature-box__title'>
 						<div>

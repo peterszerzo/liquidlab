@@ -1,7 +1,10 @@
 .info {
 
 	width: 100%;
-	padding: 0px 20px 120px 20px;
+	padding: 0px 20px 50px 20px;
+	@include bp-w-md {
+		padding: 0 20px 120px 20px;
+	}
 
 	&__content {
 		max-width: $max-width;
@@ -24,12 +27,11 @@
 	}
 
 	.chat-box {
-		width: 300px;
 		display: block;
 		text-align: center;
-		margin: auto auto 50px auto;
+		margin: auto auto 20px auto;
 		@include bp-w-md() {
-			margin: auto auto 70px auto;
+			margin: auto auto 20px auto;
 		}
 	}
 

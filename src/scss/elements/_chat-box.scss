@@ -1,15 +1,31 @@
 .chat-box {
+
 	@include font-size(24px);
-	padding: 6px 18px;
+	padding: 6px 0;
 	border-radius: 22px;
 
 	@include bp-w-md() {
-		padding: 8px 22px;
-	border-radius: 28px;
+		padding: 8px 0;
+		border-radius: 28px;
 		@include font-size(30px);
 	}
 	
+	$c: palette-get(green, base); 
+
 	
-	background-color: palette-get(green, base);
-	color: white;
+	
+
+	h1 {
+		color: $c;
+		padding: 0;
+		margin: 0;
+		display: inline;
+		@include font-size(28px);
+		@include bp-w-md() {
+			@include font-size(38px);
+		}
+		// border-bottom: 2px solid $c;
+	}
+	
+
 }

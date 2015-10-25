@@ -14,6 +14,7 @@ var ll = {};
 
 ll.start = function () {
 	var Cmp = ll.Comp.Layout;
+	console.log(React.renderToString(React.createElement(Cmp, null)));
 	React.render(React.createElement(Cmp, null), document.getElementById('site'));
 };
 (function () {
@@ -21,7 +22,7 @@ ll.start = function () {
 	ll.content = ll.content || {};
 
 	ll.content.chatBoxes = [{
-		title: "High-quality, fresh ingredients. Custom-selected.",
+		title: "High-quality, fresh ingredients. Custom-selected",
 		body: "Short on time? Not sure where to start? Try one of our Juice Sampler Packages.",
 		boxData: [{
 			title: "Drink juice first",
@@ -37,15 +38,15 @@ ll.start = function () {
 			imageFileName: "train-tracks-600.jpg"
 		}]
 	}, {
-		title: "Jump-start a healthy you with LiquidLab.",
+		title: "Jump-start a healthy you with LiquidLab",
 		body: "Our custom service crafts a juice program tailored to your current lifestyle and health goals. If you’re already committed to a healthy lifestyle and are looking to incorporate fresh juice as part of a balanced diet, it might be just what you’re looking for - with mere 15 minutes to get started.",
 		boxData: [{
 			title: "Tell us about you",
-			body: "Tell us how you’re currently living. High stress? Happily balancing work, home and exercise? Somewhere in between?",
+			body: "Tell us how you’re currently living. High stress? Happily balanced? Somewhere in between?",
 			imageFileName: "notebook-and-coffee-600.jpg"
 		}, {
 			title: "Let's nerd it out together",
-			body: "Our databases know exactly what your body needs based on your metabolism, lifestyle and mood. And they are really smooth in conversation.",
+			body: "Our databases are awesome at finding out what you need. Also really smooth in conversation!",
 			imageFileName: "laptop-600.jpg"
 		}, {
 			title: "Polish it up with some more you",
@@ -53,7 +54,7 @@ ll.start = function () {
 			imageFileName: "putting-on-shoes-600.jpg"
 		}]
 	}, {
-		title: "We do put a lot of care into this.",
+		title: "We do put a lot of care into this",
 		body: "A happy team of nutritionists, farmers, data scientists, designers and programmers stand behind your experience at LiquidLab."
 	}];
 
@@ -280,9 +281,13 @@ ll.Comp = ll.Comp || {};
 								"div",
 								{ className: "grid__col grid__col--9-of-12" },
 								React.createElement(
-									"h1",
+									"div",
 									{ className: "chat-box chat-bar__title" },
-									this.props.title
+									React.createElement(
+										"h1",
+										null,
+										this.props.title
+									)
 								),
 								React.createElement(
 									"p",
@@ -453,9 +458,13 @@ ll.Comp = ll.Comp || {};
 						"div",
 						{ className: "info__content" },
 						React.createElement(
-							"h1",
+							"div",
 							{ className: "chat-box" },
-							"Discover how:"
+							React.createElement(
+								"h1",
+								null,
+								"Discover how:"
+							)
 						),
 						React.createElement(
 							"div",
@@ -503,11 +512,14 @@ ll.Comp = ll.Comp || {};
     */
 		}, {
 			key: "renderFeatureBox",
-			value: function renderFeatureBox(data) {
+			value: function renderFeatureBox(data, modifier) {
+
+				var baseCls = 'feature-box feature-box--4-to-3',
+				    cls = modifier ? baseCls + " feature-box--" + modifier : baseCls;
 
 				return React.createElement(
 					"div",
-					{ className: "feature-box feature-box--4-to-3" },
+					{ className: baseCls },
 					React.createElement("div", { className: "feature-box__background", style: { 'backgroundImage': "url(public/images/" + data.imageFileName + ")" } }),
 					React.createElement(
 						"div",
