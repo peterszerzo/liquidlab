@@ -2,6 +2,8 @@
 
 	var { Header, Footer, Hero, Pitch, ChatBar, Info, About } = ll.Comp;
 
+	var routes = [ 'home', 'about' ];
+
 	ll.Comp.Layout = class extends React.Component {
 
 		/*
@@ -11,7 +13,6 @@
 		constructor(props) {
 			super(props);
 			this.state = {
-				route: 'home',
 				scrollTop: null
 			};
 		}
@@ -24,7 +25,7 @@
 		render() {
 			return (
 				<div className='wrapper' onScroll={this.handleScroll.bind(this)}>
-					{ this.state.scrollTop > 500 ? <Header /> : null }
+					{ (this.state.scrollTop > 500 || this.state.route !== 'home') ? <Header activeRoute={this.state.route} /> : null }
 					{ this.renderRoutable() }
 				</div>
 			);
@@ -59,6 +60,18 @@
 
 
 		/*
+		 * 
+		 *
+		 */
+		componentWillMount() {
+			var { hash } = window.location;
+			hash = hash.slice(1);
+			var newHash = (routes.indexOf(hash) > -1) ? hash : routes[0];
+			this.setState({ route: newHash });
+		}
+
+
+		/*
 		 *
 		 *
 		 */
@@ -81,7 +94,9 @@
 		 *
 		 */
 		setHash() {
-			window.location.hash = this.state.route;
+			if (window.location.hash !== this.state.route) {
+				window.location.hash = this.state.route;
+			}
 		}
 
 

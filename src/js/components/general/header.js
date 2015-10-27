@@ -32,7 +32,7 @@
 		 */
 		renderNavItems() {
 			return [ 'home', 'explore', 'about' ].map((item, i) => {
-				var cls = `header__nav-item ${i === 0 ? 'header__nav-item--active' : ''}`
+				var cls = `header__nav-item ${this.props.activeRoute === item ? 'header__nav-item--active' : ''}`
 				return (
 					<li className={cls} key={i}>
 						<div className='header__nav-item__indicator'>

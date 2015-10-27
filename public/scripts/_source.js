@@ -221,8 +221,10 @@ ll.Comp = ll.Comp || {};
 		}, {
 			key: "renderNavItems",
 			value: function renderNavItems() {
+				var _this = this;
+
 				return ['home', 'explore', 'about'].map(function (item, i) {
-					var cls = "header__nav-item " + (i === 0 ? 'header__nav-item--active' : '');
+					var cls = "header__nav-item " + (_this.props.activeRoute === item ? 'header__nav-item--active' : '');
 					return React.createElement(
 						"li",
 						{ className: cls, key: i },
@@ -275,44 +277,104 @@ ll.Comp = ll.Comp || {};
 							React.createElement(
 								"h1",
 								null,
-								"We have a simple story"
+								"The story is simple, really"
 							)
 						),
 						React.createElement(
 							"div",
-							{ className: "grid" },
-							React.createElement("div", { className: "grid__col grid__col--6-of-12" }),
+							{ className: "grid about__section" },
 							React.createElement(
 								"div",
 								{ className: "grid__col grid__col--6-of-12" },
 								React.createElement(
+									"div",
+									{ className: "feature-box feature-box--4-to-3" },
+									React.createElement("div", {
+										className: "feature-box__background",
+										style: { 'backgroundImage': "url(public/images/family-600.jpg)" }
+									})
+								)
+							),
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "chat-box" },
+									React.createElement(
+										"h1",
+										null,
+										"She thinks about her"
+									)
+								),
+								React.createElement(
 									"p",
 									null,
-									"Jeff woke up one morning."
+									"Liz watched her daughter eat breakfast one morning and said to herself: 'the menu needs to change'."
 								)
 							)
 						),
 						React.createElement(
 							"div",
-							{ className: "grid" },
+							{ className: "grid about__section" },
 							React.createElement(
 								"div",
 								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "chat-box" },
+									React.createElement(
+										"h1",
+										null,
+										"He thinks about nature (when awake)"
+									)
+								),
 								React.createElement(
 									"p",
 									null,
 									"Aby liked the idea and had many things to add."
 								)
 							),
-							React.createElement("div", { className: "grid__col grid__col--6-of-12" })
-						),
-						React.createElement(
-							"div",
-							{ className: "grid" },
-							React.createElement("div", { className: "grid__col grid__col--6-of-12" }),
 							React.createElement(
 								"div",
 								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "feature-box feature-box--4-to-3" },
+									React.createElement("div", {
+										className: "feature-box__background",
+										style: { 'backgroundImage': "url(public/images/tractor-guy-600.jpg)" }
+									})
+								)
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "grid about__section" },
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "feature-box feature-box--4-to-3" },
+									React.createElement("div", {
+										className: "feature-box__background",
+										style: { 'backgroundImage': "url(public/images/pineapple-600.jpg)" }
+									})
+								)
+							),
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "chat-box" },
+									React.createElement(
+										"h1",
+										null,
+										"It does not think much"
+									)
+								),
 								React.createElement(
 									"p",
 									null,
@@ -732,6 +794,8 @@ ll.Comp = ll.Comp || {};
 	var Info = _ll$Comp.Info;
 	var About = _ll$Comp.About;
 
+	var routes = ['home', 'about'];
+
 	ll.Comp.Layout = (function (_React$Component8) {
 		_inherits(_class8, _React$Component8);
 
@@ -745,7 +809,6 @@ ll.Comp = ll.Comp || {};
 
 			_get(Object.getPrototypeOf(_class8.prototype), "constructor", this).call(this, props);
 			this.state = {
-				route: 'home',
 				scrollTop: null
 			};
 		}
@@ -761,7 +824,7 @@ ll.Comp = ll.Comp || {};
 				return React.createElement(
 					"div",
 					{ className: "wrapper", onScroll: this.handleScroll.bind(this) },
-					this.state.scrollTop > 500 ? React.createElement(Header, null) : null,
+					this.state.scrollTop > 500 || this.state.route !== 'home' ? React.createElement(Header, { activeRoute: this.state.route }) : null,
 					this.renderRoutable()
 				);
 			}
@@ -795,6 +858,20 @@ ll.Comp = ll.Comp || {};
 			}
 
 			/*
+    * 
+    *
+    */
+		}, {
+			key: "componentWillMount",
+			value: function componentWillMount() {
+				var hash = window.location.hash;
+
+				hash = hash.slice(1);
+				var newHash = routes.indexOf(hash) > -1 ? hash : routes[0];
+				this.setState({ route: newHash });
+			}
+
+			/*
     *
     *
     */
@@ -821,7 +898,9 @@ ll.Comp = ll.Comp || {};
 		}, {
 			key: "setHash",
 			value: function setHash() {
-				window.location.hash = this.state.route;
+				if (window.location.hash !== this.state.route) {
+					window.location.hash = this.state.route;
+				}
 			}
 
 			/*
