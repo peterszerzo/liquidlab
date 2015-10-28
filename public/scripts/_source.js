@@ -14,6 +14,7 @@ var ll = {};
 
 ll.start = function () {
 	var Cmp = ll.Comp.Layout;
+	// console.log(React.renderToString(<Cmp />));
 	React.render(React.createElement(Cmp, null), document.getElementById('site'));
 };
 (function () {
@@ -21,7 +22,7 @@ ll.start = function () {
 	ll.content = ll.content || {};
 
 	ll.content.chatBoxes = [{
-		title: "High-quality, fresh ingredients. Custom-selected.",
+		title: "High-quality, fresh ingredients. Custom-selected",
 		body: "Short on time? Not sure where to start? Try one of our Juice Sampler Packages.",
 		boxData: [{
 			title: "Drink juice first",
@@ -37,15 +38,15 @@ ll.start = function () {
 			imageFileName: "train-tracks-600.jpg"
 		}]
 	}, {
-		title: "Jump-start a healthy you with LiquidLab.",
+		title: "Jump-start a healthy you with LiquidLab",
 		body: "Our custom service crafts a juice program tailored to your current lifestyle and health goals. If you’re already committed to a healthy lifestyle and are looking to incorporate fresh juice as part of a balanced diet, it might be just what you’re looking for - with mere 15 minutes to get started.",
 		boxData: [{
 			title: "Tell us about you",
-			body: "Tell us how you’re currently living. High stress? Happily balancing work, home and exercise? Somewhere in between?",
+			body: "Tell us how you’re currently living. High stress? Happily balanced? Somewhere in between?",
 			imageFileName: "notebook-and-coffee-600.jpg"
 		}, {
 			title: "Let's nerd it out together",
-			body: "Our databases know exactly what your body needs based on your metabolism, lifestyle and mood. And they are really smooth in conversation.",
+			body: "Our databases are awesome at finding out what you need. Also really smooth in conversation!",
 			imageFileName: "laptop-600.jpg"
 		}, {
 			title: "Polish it up with some more you",
@@ -53,7 +54,7 @@ ll.start = function () {
 			imageFileName: "putting-on-shoes-600.jpg"
 		}]
 	}, {
-		title: "We do put a lot of care into this.",
+		title: "We do put a lot of care into this",
 		body: "A happy team of nutritionists, farmers, data scientists, designers and programmers stand behind your experience at LiquidLab."
 	}];
 
@@ -220,8 +221,10 @@ ll.Comp = ll.Comp || {};
 		}, {
 			key: "renderNavItems",
 			value: function renderNavItems() {
+				var _this = this;
+
 				return ['home', 'explore', 'about'].map(function (item, i) {
-					var cls = "header__nav-item " + (i === 0 ? 'header__nav-item--active' : '');
+					var cls = "header__nav-item " + (_this.props.activeRoute === item ? 'header__nav-item--active' : '');
 					return React.createElement(
 						"li",
 						{ className: cls, key: i },
@@ -245,13 +248,166 @@ ll.Comp = ll.Comp || {};
 })();
 (function () {
 
-	ll.Comp.ChatBar = (function (_React$Component3) {
+	ll.Comp.About = (function (_React$Component3) {
 		_inherits(_class3, _React$Component3);
 
-		function _class3(props) {
+		function _class3() {
 			_classCallCheck(this, _class3);
 
-			_get(Object.getPrototypeOf(_class3.prototype), "constructor", this).call(this, props);
+			_get(Object.getPrototypeOf(_class3.prototype), "constructor", this).apply(this, arguments);
+		}
+
+		_createClass(_class3, [{
+			key: "render",
+
+			/*
+    *
+    *
+    */
+			value: function render() {
+				return React.createElement(
+					"div",
+					{ className: "about" },
+					React.createElement(
+						"div",
+						{ className: "about__content" },
+						React.createElement(
+							"div",
+							{ className: "chat-box" },
+							React.createElement(
+								"h1",
+								null,
+								"The story is simple, really"
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "grid about__section" },
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "feature-box feature-box--4-to-3" },
+									React.createElement("div", {
+										className: "feature-box__background",
+										style: { 'backgroundImage': "url(public/images/family-600.jpg)" }
+									})
+								)
+							),
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "chat-box" },
+									React.createElement(
+										"h1",
+										null,
+										"She thinks about her"
+									)
+								),
+								React.createElement(
+									"p",
+									null,
+									"Liz watched her daughter eat breakfast one morning and said to herself: 'the menu needs to change'."
+								)
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "grid about__section" },
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "chat-box" },
+									React.createElement(
+										"h1",
+										null,
+										"He thinks about nature (when awake)"
+									)
+								),
+								React.createElement(
+									"p",
+									null,
+									"Aby liked the idea and had many things to add."
+								)
+							),
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "feature-box feature-box--4-to-3" },
+									React.createElement("div", {
+										className: "feature-box__background",
+										style: { 'backgroundImage': "url(public/images/tractor-guy-600.jpg)" }
+									})
+								)
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "grid about__section" },
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "feature-box feature-box--4-to-3" },
+									React.createElement("div", {
+										className: "feature-box__background",
+										style: { 'backgroundImage': "url(public/images/pineapple-600.jpg)" }
+									})
+								)
+							),
+							React.createElement(
+								"div",
+								{ className: "grid__col grid__col--6-of-12" },
+								React.createElement(
+									"div",
+									{ className: "chat-box" },
+									React.createElement(
+										"h1",
+										null,
+										"It does not think much"
+									)
+								),
+								React.createElement(
+									"p",
+									null,
+									"Luckily for us, Gabriel was easily convinced. He is really good with business development."
+								)
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "chat-box" },
+							React.createElement(
+								"h1",
+								null,
+								"Real, real simple."
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return _class3;
+	})(React.Component);
+})();
+(function () {
+
+	ll.Comp.ChatBar = (function (_React$Component4) {
+		_inherits(_class4, _React$Component4);
+
+		function _class4(props) {
+			_classCallCheck(this, _class4);
+
+			_get(Object.getPrototypeOf(_class4.prototype), "constructor", this).call(this, props);
 			this.state = {
 				isActive: true
 			};
@@ -262,7 +418,7 @@ ll.Comp = ll.Comp || {};
    *
    */
 
-		_createClass(_class3, [{
+		_createClass(_class4, [{
 			key: "render",
 			value: function render() {
 				var cls = "chat-bar " + (this.state.isActive ? '' : 'chat-bar--inactive') + " chat-bar--" + this.props.position;
@@ -280,9 +436,13 @@ ll.Comp = ll.Comp || {};
 								"div",
 								{ className: "grid__col grid__col--9-of-12" },
 								React.createElement(
-									"h1",
+									"div",
 									{ className: "chat-box chat-bar__title" },
-									this.props.title
+									React.createElement(
+										"h1",
+										null,
+										this.props.title
+									)
 								),
 								React.createElement(
 									"p",
@@ -362,21 +522,21 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class3;
+		return _class4;
 	})(React.Component);
 })();
 (function () {
 
-	ll.Comp.Hero = (function (_React$Component4) {
-		_inherits(_class4, _React$Component4);
+	ll.Comp.Hero = (function (_React$Component5) {
+		_inherits(_class5, _React$Component5);
 
-		function _class4() {
-			_classCallCheck(this, _class4);
+		function _class5() {
+			_classCallCheck(this, _class5);
 
-			_get(Object.getPrototypeOf(_class4.prototype), "constructor", this).apply(this, arguments);
+			_get(Object.getPrototypeOf(_class5.prototype), "constructor", this).apply(this, arguments);
 		}
 
-		_createClass(_class4, [{
+		_createClass(_class5, [{
 			key: "render",
 
 			/*
@@ -424,21 +584,21 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class4;
+		return _class5;
 	})(React.Component);
 })();
 (function () {
 
-	ll.Comp.Info = (function (_React$Component5) {
-		_inherits(_class5, _React$Component5);
+	ll.Comp.Info = (function (_React$Component6) {
+		_inherits(_class6, _React$Component6);
 
-		function _class5() {
-			_classCallCheck(this, _class5);
+		function _class6() {
+			_classCallCheck(this, _class6);
 
-			_get(Object.getPrototypeOf(_class5.prototype), "constructor", this).apply(this, arguments);
+			_get(Object.getPrototypeOf(_class6.prototype), "constructor", this).apply(this, arguments);
 		}
 
-		_createClass(_class5, [{
+		_createClass(_class6, [{
 			key: "render",
 
 			/*
@@ -453,9 +613,13 @@ ll.Comp = ll.Comp || {};
 						"div",
 						{ className: "info__content" },
 						React.createElement(
-							"h1",
+							"div",
 							{ className: "chat-box" },
-							"Discover how:"
+							React.createElement(
+								"h1",
+								null,
+								"Here is how:"
+							)
 						),
 						React.createElement(
 							"div",
@@ -473,7 +637,7 @@ ll.Comp = ll.Comp || {};
 									{ className: "info__button" },
 									React.createElement(
 										"div",
-										{ className: "big-button" },
+										{ className: "big-button", onClick: this.props.navigateToAboutPage },
 										"Our story"
 									)
 								)
@@ -503,11 +667,14 @@ ll.Comp = ll.Comp || {};
     */
 		}, {
 			key: "renderFeatureBox",
-			value: function renderFeatureBox(data) {
+			value: function renderFeatureBox(data, modifier) {
+
+				var baseCls = 'feature-box feature-box--4-to-3',
+				    cls = modifier ? baseCls + " feature-box--" + modifier : baseCls;
 
 				return React.createElement(
 					"div",
-					{ className: "feature-box feature-box--4-to-3" },
+					{ className: baseCls },
 					React.createElement("div", { className: "feature-box__background", style: { 'backgroundImage': "url(public/images/" + data.imageFileName + ")" } }),
 					React.createElement(
 						"div",
@@ -539,21 +706,21 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class5;
+		return _class6;
 	})(React.Component);
 })();
 (function () {
 
-	ll.Comp.Pitch = (function (_React$Component6) {
-		_inherits(_class6, _React$Component6);
+	ll.Comp.Pitch = (function (_React$Component7) {
+		_inherits(_class7, _React$Component7);
 
-		function _class6() {
-			_classCallCheck(this, _class6);
+		function _class7() {
+			_classCallCheck(this, _class7);
 
-			_get(Object.getPrototypeOf(_class6.prototype), "constructor", this).apply(this, arguments);
+			_get(Object.getPrototypeOf(_class7.prototype), "constructor", this).apply(this, arguments);
 		}
 
-		_createClass(_class6, [{
+		_createClass(_class7, [{
 			key: "render",
 
 			/*
@@ -614,7 +781,7 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class6;
+		return _class7;
 	})(React.Component);
 })();
 (function () {
@@ -625,19 +792,22 @@ ll.Comp = ll.Comp || {};
 	var Pitch = _ll$Comp.Pitch;
 	var ChatBar = _ll$Comp.ChatBar;
 	var Info = _ll$Comp.Info;
+	var About = _ll$Comp.About;
 
-	ll.Comp.Layout = (function (_React$Component7) {
-		_inherits(_class7, _React$Component7);
+	var routes = ['home', 'about'];
+
+	ll.Comp.Layout = (function (_React$Component8) {
+		_inherits(_class8, _React$Component8);
 
 		/*
    *
    *
    */
 
-		function _class7(props) {
-			_classCallCheck(this, _class7);
+		function _class8(props) {
+			_classCallCheck(this, _class8);
 
-			_get(Object.getPrototypeOf(_class7.prototype), "constructor", this).call(this, props);
+			_get(Object.getPrototypeOf(_class8.prototype), "constructor", this).call(this, props);
 			this.state = {
 				scrollTop: null
 			};
@@ -648,21 +818,99 @@ ll.Comp = ll.Comp || {};
    *
    */
 
-		_createClass(_class7, [{
+		_createClass(_class8, [{
 			key: "render",
 			value: function render() {
 				return React.createElement(
 					"div",
 					{ className: "wrapper", onScroll: this.handleScroll.bind(this) },
-					this.state.scrollTop > 500 ? React.createElement(Header, null) : null,
-					React.createElement(Hero, null),
-					React.createElement(Pitch, null),
-					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[0], { position: "left" })),
-					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[1], { position: "right" })),
-					React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[2], { position: "left" })),
-					React.createElement(Info, null),
-					React.createElement(Footer, null)
+					this.state.scrollTop > 500 || this.state.route !== 'home' ? React.createElement(Header, { activeRoute: this.state.route }) : null,
+					this.renderRoutable()
 				);
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "renderRoutable",
+			value: function renderRoutable() {
+				if (this.state.route === 'home') {
+					return React.createElement(
+						"div",
+						null,
+						React.createElement(Hero, null),
+						React.createElement(Pitch, null),
+						React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[0], { position: "left" })),
+						React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[1], { position: "right" })),
+						React.createElement(ChatBar, _extends({}, ll.content.chatBoxes[2], { position: "left" })),
+						React.createElement(Info, { navigateToAboutPage: this.navigateToAboutPage.bind(this) }),
+						React.createElement(Footer, null)
+					);
+				}
+
+				return React.createElement(
+					"div",
+					null,
+					React.createElement(About, null)
+				);
+			}
+
+			/*
+    * 
+    *
+    */
+		}, {
+			key: "componentWillMount",
+			value: function componentWillMount() {
+				var hash = window.location.hash;
+
+				hash = hash.slice(1);
+				var newHash = routes.indexOf(hash) > -1 ? hash : routes[0];
+				this.setState({ route: newHash });
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				this.setHash();
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "componentDidUpdate",
+			value: function componentDidUpdate() {
+				this.setHash();
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "setHash",
+			value: function setHash() {
+				if (window.location.hash !== this.state.route) {
+					window.location.hash = this.state.route;
+				}
+			}
+
+			/*
+    *
+    *
+    */
+		}, {
+			key: "navigateToAboutPage",
+			value: function navigateToAboutPage() {
+				this.setState({ route: 'about' });
 			}
 
 			/*
@@ -677,6 +925,6 @@ ll.Comp = ll.Comp || {};
 			}
 		}]);
 
-		return _class7;
+		return _class8;
 	})(React.Component);
 })();
